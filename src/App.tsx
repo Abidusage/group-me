@@ -19,6 +19,7 @@ import {
 import Home from './pages/Home';
 import Message from './pages/Message';
 import Profile from './pages/Profile';
+import GroupDetail from './pages/GroupDetail'; // ✅ Nouvelle page à importer
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -46,40 +47,48 @@ setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route exact path="/home">
-            <Home />
-          </Route>
-          <Route exact path="/message">
-            <Message />
-          </Route>
-          <Route exact path="/profile">
-            <Profile />
-          </Route>
-          <Redirect exact from="/" to="/home" />
-        </IonRouterOutlet>
+  <IonReactRouter>
+    <IonTabs>
+      <IonRouterOutlet>
+        {/* ✅ Toutes les routes sont maintenant dans le même outlet */}
+        <Route exact path="/home">
+          <Home />
+        </Route>
+        <Route exact path="/message">
+          <Message />
+        </Route>
+        <Route exact path="/profile">
+          <Profile />
+        </Route>
 
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="home" href="/home">
-            <IonIcon icon={peopleOutline} />
-            <IonLabel>Groups</IonLabel>
-          </IonTabButton>
+        {/* ✅ Route dynamique pour les détails d’un groupe */}
+        <Route exact path="/group/:id">
+          <GroupDetail />
+        </Route>
 
-          <IonTabButton tab="message" href="/message">
-            <IonIcon icon={chatbubbleEllipsesOutline} />
-            <IonLabel>Messages</IonLabel>
-          </IonTabButton>
+        <Redirect exact from="/" to="/home" />
+      </IonRouterOutlet>
 
-          <IonTabButton tab="profile" href="/profile">
-            <IonIcon icon={personCircleOutline} />
-            <IonLabel>Profile</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
+      <IonTabBar slot="bottom">
+        <IonTabButton tab="home" href="/home">
+          <IonIcon icon={peopleOutline} />
+          <IonLabel>Groups</IonLabel>
+        </IonTabButton>
+
+        <IonTabButton tab="message" href="/message">
+          <IonIcon icon={chatbubbleEllipsesOutline} />
+          <IonLabel>Messages</IonLabel>
+        </IonTabButton>
+
+        <IonTabButton tab="profile" href="/profile">
+          <IonIcon icon={personCircleOutline} />
+          <IonLabel>Profile</IonLabel>
+        </IonTabButton>
+      </IonTabBar>
+    </IonTabs>
+  </IonReactRouter>
+</IonApp>
+
 );
 
 export default App;
