@@ -1,4 +1,4 @@
-GroupMe – Messagerie instantanée moderne
+- GroupMe – Messagerie instantanée moderne
 GroupMe est une application de messagerie de groupe conçue pour offrir une expérience fluide, sécurisée et instantanée aux utilisateurs africains. Développée avec Ionic React en frontend et Django REST Framework en backend, elle combine performance, design moderne et robustesse technique.
 
  Fonctionnalités principales
