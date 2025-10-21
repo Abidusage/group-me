@@ -4,7 +4,7 @@
 GroupMe est une application de messagerie de groupe conçue pour offrir une expérience fluide, sécurisée et instantanée aux utilisateurs africains. Développée avec Ionic React en frontend et Django REST Framework en backend, elle combine performance, design moderne et robustesse technique.
 
 # Fonctionnalités principales
- Authentification JWT avec affichage dynamique du profil utilisateur
+-  Authentification JWT avec affichage dynamique du profil utilisateur
 
 - Inscription et connexion avec validation en temps réel et messages d’erreur stylisés
 
